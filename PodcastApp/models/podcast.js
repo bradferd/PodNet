@@ -9,6 +9,6 @@ const PodcastSchema = new mongoose.Schema({
 	playlistID: mongoose.Types.ObjectId
 })
 
-const PlaylistCollection = mongoose.model('Playlist', PlaylistSchema)
+const PodcastCollection = mongoose.model('Podcasts', PodcastSchema)
 
 module.exports = {}

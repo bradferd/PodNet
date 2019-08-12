@@ -6,6 +6,6 @@ const CommentSchema = new mongoose.Schema({
 	podcastId: mongoose.Types.ObjectId
 })
 
-const CommentCollection = mongoose.model('Comment', CommentSchema)
+const CommentCollection = mongoose.model('Comments', CommentSchema)
 
 module.exports = {}

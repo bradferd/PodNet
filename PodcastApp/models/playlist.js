@@ -1,17 +1,24 @@
 const mongoose = require('./connection.js')
 
-/* Step 2
- *
- * TODO: create model schema
- * NOTE: skip this if you are not using mongoose
- *
- */
 const PlaylistSchema = new mongoose.Schema({
 	name: String,
 	description: String,
 	genre: String
 })
 
-const PodcastCollection = mongoose.model('Podcast', PodcastSchema)
+const PlaylistCollection = mongoose.model('Playlists', PlaylistSchema)
+
+const getAllPlaylist = () => PlaylistCollection.find()
+
+const getPlaylist = playlistId => PlaylistCollection.findById(playlistId)
+
+const addNewPlaylist = playlistObject =>
+	PlaylistCollection.create(playlistObject)
+
+const updatePlaylist = (playlistId, playlistObject) =>
+	PlaylistCollection.findByIdAndUpdate(playlistId, playlistObject)
+
+const deletePlaylist = playlistId =>
+	PlaylistCollection.findByIdAndDelete(playlistId)
 
 module.exports = {}
