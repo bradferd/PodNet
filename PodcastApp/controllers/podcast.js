@@ -1,7 +1,7 @@
 const express = require('express')
 
 const podcastApi = require('../models/podcast.js')
-const podcastRouter = express.Router()
+const podcastRouter = express.Router({ mergeParams: true })
 
 podcastRouter.get('/', async (req, res) => {
 	try {
