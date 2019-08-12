@@ -32,6 +32,27 @@ podcastRouter.post('/', async (req, res) => {
 	}
 })
 
+podcastRouter.put('/:podcastId', async (req, res) => {
+	try {
+		const editedPodcast = await podcastApi.editPodcast(
+			req.params.podcastId,
+			req.body
+		)
+		res.json(editedPodcast)
+	} catch (err) {
+		console.log(err)
+	}
+})
+
+podcastRouter.delete('/:podcastId', async (req, res) => {
+	try {
+		const deletedPodcast = await podcastApi.deletePodcast(req.params.podcastId)
+		res.JSON(deletedPodcast)
+	} catch (err) {
+		console.log(err)
+	}
+})
+
 module.exports = {
 	podcastRouter
 }
