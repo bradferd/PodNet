@@ -24,4 +24,10 @@ const editPodcast = (podcastId, podcastObject) =>
 const deletePodcast = podcastId =>
 	PodcastCollection.findByIdAndDelete(podcastId)
 
-module.exports = {}
+module.exports = {
+	getPodcastsByPlaylist,
+	getPodcast,
+	newPodcast,
+	editPodcast,
+	deletePodcast
+}

@@ -21,4 +21,10 @@ const updatePlaylist = (playlistId, playlistObject) =>
 const deletePlaylist = playlistId =>
 	PlaylistCollection.findByIdAndDelete(playlistId)
 
-module.exports = {}
+module.exports = {
+	getAllPlaylist,
+	getPlaylist,
+	addNewPlaylist,
+	updatePlaylist,
+	deletePlaylist
+}
