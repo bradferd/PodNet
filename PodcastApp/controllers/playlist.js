@@ -17,7 +17,7 @@ playlistRouter.get('/:playlistId', async (req, res) => {
 	}
 })
 
-playlistRouter.post('/' async (req, res) => {
+playlistRouter.post('/', async (req, res) => {
 	try {
 		const newPlaylist = await playlistApi.addNewPlaylist(req.body)
 		res.json(newPlaylist)
@@ -28,7 +28,10 @@ playlistRouter.post('/' async (req, res) => {
 
 playlistRouter.put('/:playlistId', async (req, res) => {
 	try {
-		const updatedPlaylist = await playlistApi.updatedPlaylist(req.params.playlistId, req.body)
+		const updatedPlaylist = await playlistApi.updatedPlaylist(
+			req.params.playlistId,
+			req.body
+		)
 		res.json(updatedPlaylist)
 	} catch (err) {
 		console.log(err)
@@ -37,7 +40,9 @@ playlistRouter.put('/:playlistId', async (req, res) => {
 
 playlistRouter.delete('/:playlistId', async (req, res) => {
 	try {
-		const deletedPlaylist = await playlistAPi.deletePlaylist(req.params.playlistId)
+		const deletedPlaylist = await playlistAPi.deletePlaylist(
+			req.params.playlistId
+		)
 		res.json(deletedPlaylist)
 	} catch (err) {
 		console.log(err)
