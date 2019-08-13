@@ -13,7 +13,7 @@ let listenApi = axios.create({
 
 podcastSearchRouter.get('/', async (req, res) => {
 	try {
-		const response = await listenApi.get('/search/photos', {
+		const response = await listenApi.get('/search', {
 			params: { query: req.query.query }
 		})
 		res.json(response.data)
