@@ -1,8 +1,3 @@
-/*
- * This is the template for a server.js file.  Follow the steps below and read
- * the comments for creating your own (or you can just copy this file).
- */
-
 /* Step 1
  *
  * Import needed packages
@@ -19,6 +14,7 @@ const app = express()
 const { playlistRouter } = require('./controllers/playlist.js')
 const { podcastRouter } = require('./controllers/podcast.js')
 const { commentRouter } = require('./controllers/comment.js')
+const { podcastSearchRouter } = require('./controllers/listenNotes.js')
 
 /* Step 3
  *

@@ -23,5 +23,5 @@ podcastSearchRouter.get('/', async (req, res) => {
 })
 
 module.exports = {
-	imageSearchRouter
+	podcastSearchRouter
 }
