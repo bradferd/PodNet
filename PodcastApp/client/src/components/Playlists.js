@@ -11,8 +11,8 @@ export default class Playlists extends Component {
 	}
 
 	getAllPlaylist = async () => {
-		const res = await axios.get(`/api/playlists`)
-		this.setState({ playlist: res.data })
+		const res = await axios.get(`/api/playlist`)
+		this.setState({ playlists: res.data })
 	}
 
 	render() {
@@ -28,7 +28,7 @@ export default class Playlists extends Component {
 		return (
 			<div>
 				<h1>Playlists</h1>
-				{playlists}
+				<div>{playlists}</div>
 			</div>
 		)
 	}
