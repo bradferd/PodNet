@@ -13,6 +13,7 @@ function App() {
 				<Switch>
 					<Route exact path='/' component={Playlists} />
 					<Route path='/playlists/new' component={NewPlaylist} />
+					<Route path='/playlists/:playlistId/edit' />
 				</Switch>
 			</Router>
 		</div>
