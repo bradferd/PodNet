@@ -11,14 +11,14 @@ export default class NewPlaylist extends Component {
 			genre: ''
 		},
 		redirectToPlaylists: false
-    }
-    
-    componentDidMount() {
-        const res = await axios.get(
-            `/api/playlist/${this.props.match.params.playlistId}`
-        )
-        this.setState({ playlist: res.data })
-    }
+	}
+
+	async componentDidMount() {
+		const res = await axios.get(
+			`/api/playlist/${this.props.match.params.playlistId}`
+		)
+		this.setState({ playlist: res.data })
+	}
 
 	handleInputChange = e => {
 		const copyPlaylist = { ...this.state.newPlaylist }
@@ -28,7 +28,10 @@ export default class NewPlaylist extends Component {
 
 	handleSubmit = async e => {
 		e.preventDefault()
-		const res = axios.put(`/api/playlist/${this.state.playlist._id}`, this.state.playlist)
+		const res = axios.put(
+			`/api/playlist/${this.state.playlist._id}`,
+			this.state.playlist
+		)
 		this.setState({ playist: res.data, redirectToPlaylists: true })
 	}
 
@@ -69,7 +72,9 @@ export default class NewPlaylist extends Component {
 
 	render() {
 		if (this.state.redirectToPlaylists) {
-			return <Redirect to={`/playlists/${this.props.match.params.playlistId}`} />
+			return (
+				<Redirect to={`/playlists/${this.props.match.params.playlistId}`} />
+			)
 		}
 		return (
 			<div>

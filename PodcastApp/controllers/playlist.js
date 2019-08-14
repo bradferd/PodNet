@@ -10,7 +10,7 @@ playlistRouter.get('/', async (req, res) => {
 
 playlistRouter.get('/:playlistId', async (req, res) => {
 	try {
-		const playlist = await playlistApi.getPlaylist(req.params.collectionId)
+		const playlist = await playlistApi.getPlaylist(req.params.playlistId)
 		res.json(playlist)
 	} catch (err) {
 		console.log(err)
