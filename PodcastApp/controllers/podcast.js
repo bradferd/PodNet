@@ -1,11 +1,10 @@
 const express = require('express')
-
 const podcastApi = require('../models/podcast.js')
 const podcastRouter = express.Router({ mergeParams: true })
 
 podcastRouter.get('/', async (req, res) => {
 	try {
-		const podcasts = await podcastApi.getPodcastByPlaylist(
+		const podcasts = await podcastApi.getPodcastsByPlaylist(
 			req.params.playlistId
 		)
 		res.json(podcasts)
@@ -17,7 +16,7 @@ podcastRouter.get('/', async (req, res) => {
 podcastRouter.get('/:podcastId', async (req, res) => {
 	try {
 		const singlePodcast = await podcastApi.getPodcast(req.params.podcastId)
-		res.json(podcastId)
+		res.json(singlePodcast)
 	} catch (err) {
 		console.log(err)
 	}

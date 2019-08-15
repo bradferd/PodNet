@@ -1,11 +1,11 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Playlists from './components/Playlists.js'
+import Playlists from './components/Playlist/Playlists'
 import './App.css'
 import Navbar from './components/Navbar'
 import NewPlaylist from './components/Form/NewPlaylist'
 import EditPlaylist from './components/Form/EditPlaylist'
-import PlaylistDash from './components/PlaylistDash'
+import PlaylistDash from './components/Playlist/PlaylistDash'
 
 function App() {
 	return (

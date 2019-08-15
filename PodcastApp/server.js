@@ -12,7 +12,7 @@ app.use(express.static(`${__dirname}/client/build`))
 app.use('/api/playlist', playlistRouter)
 app.use('/api/playlist/:playlistId/podcast', podcastRouter)
 app.use('/api/playlist/:playlistId/podcast/:commentId/comment', commentRouter)
-app.use('api/listenNotes', podcastSearchRouter)
+app.use('/api/listenNotes', podcastSearchRouter)
 
 app.get('/*', (req, res) => {
 	res.sendFile(`${__dirname}/client/build/index.html`)

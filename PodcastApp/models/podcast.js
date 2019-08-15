@@ -6,13 +6,13 @@ const PodcastSchema = new mongoose.Schema({
 	genre: String,
 	duration: String,
 	description: String,
-	playlistID: mongoose.Types.ObjectId
+	playlistId: mongoose.Types.ObjectId
 })
 
 const PodcastCollection = mongoose.model('Podcasts', PodcastSchema)
 
 const getPodcastsByPlaylist = playlistId =>
-	PodcastCollection.find({ podcastId })
+	PodcastCollection.find({ playlistId })
 
 const getPodcast = podcastId => PodcastCollection.find(podcastId)
 

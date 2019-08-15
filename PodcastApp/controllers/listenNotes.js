@@ -7,15 +7,17 @@ require('dotenv').config()
 let listenApi = axios.create({
 	baseURL: 'https://listen-api.listennotes.com/api/v2',
 	headers: {
-		Authorization: `Client-ID ${process.env.ListenAPIKey}`
+		'X-ListenAPI-Key': `${process.env.ListenAPIKey}`
 	}
 })
 
 podcastSearchRouter.get('/', async (req, res) => {
 	try {
+		console.log('hey')
 		const response = await listenApi.get('/search', {
-			params: { query: req.query.query }
+			params: { q: req.query.query }
 		})
+		console.log(response)
 		res.json(response.data)
 	} catch (err) {
 		console.log(err)
