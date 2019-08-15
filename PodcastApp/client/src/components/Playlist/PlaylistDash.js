@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Axios from 'axios'
-import PodcastSearch from '../Podcast/PodcastSearch'
+import PodcastSearch from '../Search/PodcastSearch'
 
 export default class PlaylistDash extends Component {
 	state = {
