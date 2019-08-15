@@ -23,7 +23,7 @@ commentRouter.get('/:commentId', async (req, res) => {
 
 commentRouter.post('/', async (req, res) => {
 	try {
-		req.params.podcastId = req.body.podcastId
+		req.body.podcastId = req.params.podcastId
 		const newComment = await commentApi.newComment(req.body)
 	} catch (err) {
 		console.log(err)

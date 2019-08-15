@@ -3,7 +3,7 @@ import SinglePodcast from './SinglePodcast'
 
 const PodcastList = props => {
 	const podcasts = props.podcasts.map(podcast => {
-		return <SinglePodcast key={podcast.id} podcast={podcast} />
+		return <SinglePodcast {...props} key={podcast.id} podcast={podcast} />
 	})
 
 	return <div>{podcasts}</div>

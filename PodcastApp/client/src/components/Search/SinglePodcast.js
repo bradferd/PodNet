@@ -3,13 +3,16 @@ import Axios from 'axios'
 
 export default class SinglePodcast extends Component {
 	addToPlaylist = async () => {
-		await Axios.post('/api/playlist/:playlistId/podcast', {
-			publisher: this.props.podcast.publisher_original,
-			title: this.props.podcast.title_original,
-			description: this.props.podcast.description_original,
-			thumbnail: this.props.podcast.thumbnail,
-			audio: this.props.podcast.audio
-		})
+		await Axios.post(
+			`/api/playlist/${this.props.match.params.playlistId}/podcast`,
+			{
+				publisher: this.props.podcast.publisher_original,
+				title: this.props.podcast.title_original,
+				description: this.props.podcast.description_original,
+				thumbnail: this.props.podcast.thumbnail,
+				audio: this.props.podcast.audio
+			}
+		)
 	}
 	render() {
 		return (

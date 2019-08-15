@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Axios from 'axios'
 import PodcastSearch from '../Search/PodcastSearch'
+import Podcasts from '../Podcast/Podcasts'
 
 export default class PlaylistDash extends Component {
 	state = {
@@ -31,7 +32,8 @@ export default class PlaylistDash extends Component {
 		return (
 			<div>
 				<p>sup</p>
-				<PodcastSearch getPodcasts={this.getPodcasts} />
+				<Podcasts podcasts={this.state.podcasts} />
+				<PodcastSearch {...this.props} getPodcasts={this.getPodcasts} />
 			</div>
 		)
 	}

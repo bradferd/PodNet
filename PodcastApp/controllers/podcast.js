@@ -24,7 +24,7 @@ podcastRouter.get('/:podcastId', async (req, res) => {
 
 podcastRouter.post('/', async (req, res) => {
 	try {
-		req.params.playlistId = req.body.playlistId
+		req.body.playlistId = req.params.playlistId
 		const newPodcast = await podcastApi.newPodcast(req.body)
 		res.json(newPodcast)
 	} catch (err) {

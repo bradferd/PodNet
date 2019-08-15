@@ -34,7 +34,7 @@ export default class PodcastSearch extends Component {
 						onChange={e => this.setState({ term: e.target.value })}
 					/>
 				</form>
-				<PodcastList podcasts={this.state.podcasts} />
+				<PodcastList {...this.props} podcasts={this.state.podcasts} />
 			</div>
 		)
 	}
