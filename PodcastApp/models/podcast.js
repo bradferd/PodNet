@@ -1,11 +1,11 @@
 const mongoose = require('./connection.js')
 
 const PodcastSchema = new mongoose.Schema({
+	publisher: String,
 	title: String,
-	host: String,
-	genre: String,
-	duration: String,
 	description: String,
+	thumbnail: String,
+	audio: String,
 	playlistId: mongoose.Types.ObjectId
 })
 

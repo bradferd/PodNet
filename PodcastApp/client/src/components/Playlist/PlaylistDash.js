@@ -26,11 +26,12 @@ export default class PlaylistDash extends Component {
 		)
 		this.setState({ podcasts: res.data })
 	}
+
 	render() {
 		return (
 			<div>
 				<p>sup</p>
-				<PodcastSearch />
+				<PodcastSearch getPodcasts={this.getPodcasts} />
 			</div>
 		)
 	}

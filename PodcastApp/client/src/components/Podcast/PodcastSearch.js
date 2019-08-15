@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Axios from 'axios'
+import PodcastList from './PodcastList'
 
 export default class PodcastSearch extends Component {
 	state = {
@@ -20,10 +21,8 @@ export default class PodcastSearch extends Component {
 		this.onSearchSubmit(this.state.term)
 		this.setState({ term: '' })
 	}
+
 	render() {
-		let podcasts = this.state.podcasts.map(podcast => {
-			return <div>{podcast.podcast_title_original}</div>
-		})
 		return (
 			<div>
 				<form onSubmit={this.onFormSubmit}>
@@ -35,7 +34,7 @@ export default class PodcastSearch extends Component {
 						onChange={e => this.setState({ term: e.target.value })}
 					/>
 				</form>
-				{podcasts}
+				<PodcastList podcasts={this.state.podcasts} />
 			</div>
 		)
 	}
