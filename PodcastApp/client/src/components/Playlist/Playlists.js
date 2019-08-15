@@ -23,7 +23,7 @@ export default class Playlists extends Component {
 					<div>{playlist.name}</div>
 					<div>{playlist.genre}</div>
 					<div>{playlist.description}</div>
-					<Link to={`/playlist/${playlist._id}/edit`}>Edit Playlist</Link>
+					<Link to={`/playlists/${playlist._id}/edit`}>Edit Playlist</Link>
 				</div>
 			)
 		})
