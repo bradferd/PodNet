@@ -19,18 +19,29 @@ export default class Playlists extends Component {
 	render() {
 		let playlists = this.state.playlists.map(playlist => {
 			return (
-				<div key='playlist._id'>
-					<div>{playlist.name}</div>
-					<div>{playlist.genre}</div>
-					<div>{playlist.description}</div>
-					<Link to={`/playlists/${playlist._id}/edit`}>Edit Playlist</Link>
+				<div
+					className='ui container column'
+					key='playlist._id'
+					style={{ padding: '30px' }}
+				>
+					<div className='ui segment'>
+						<div className='ui header'>
+							<Link to={`/playlists/${playlist._id}`}>{playlist.name}</Link>
+						</div>
+						<div className='content'>
+							<h3>{playlist.genre}</h3>
+							<p>{playlist.description}</p>
+							<Link to={`/playlists/${playlist._id}/edit`}>
+								<i className='ui icon edit' />
+							</Link>
+						</div>
+					</div>
 				</div>
 			)
 		})
 		return (
-			<div>
-				<h1>Playlists</h1>
-				<div>{playlists}</div>
+			<div className='ui two column row' style={{ marginTop: '70px' }}>
+				{playlists}
 			</div>
 		)
 	}
