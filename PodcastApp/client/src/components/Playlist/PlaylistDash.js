@@ -37,7 +37,7 @@ export default class PlaylistDash extends Component {
 
 	render() {
 		return (
-			<div className='ui container' style={{ margin: '80px' }}>
+			<div className='ui segment' style={{ marginTop: '40px' }}>
 				<h1>{this.state.playlist.name}</h1>
 				<span className='right floated'>
 					<i className='trash icon' />
