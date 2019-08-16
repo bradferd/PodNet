@@ -6,7 +6,6 @@ export default class Podcast extends Component {
 			<div className='ui card'>
 				<div className='content'>
 					<h3>{this.props.publisher}</h3>
-					<button onClick={this.toggleSearch}>Find a New Podcast</button>
 				</div>
 				<div className='image'>
 					<img
