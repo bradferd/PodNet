@@ -26,13 +26,18 @@ export default class PodcastSearch extends Component {
 		return (
 			<div>
 				<form onSubmit={this.onFormSubmit}>
-					<input
-						className='prompt'
-						placeholder='search podcasts...'
-						type='text'
-						value={this.state.term}
-						onChange={e => this.setState({ term: e.target.value })}
-					/>
+					<div className='ui action input'>
+						<input
+							className='prompt'
+							placeholder='search podcasts...'
+							type='text'
+							value={this.state.term}
+							onChange={e => this.setState({ term: e.target.value })}
+						/>
+						<button className='ui icon button'>
+							<i className='search icon' />
+						</button>
+					</div>
 				</form>
 				<PodcastList {...this.props} podcasts={this.state.podcasts} />
 			</div>

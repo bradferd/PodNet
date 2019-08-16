@@ -18,8 +18,7 @@ export default class Podcasts extends Component {
 		})
 		return (
 			<div>
-				<h4>Playlist</h4>
-				{podcasts}
+				<div className='ui raised segment'>{podcasts}</div>
 			</div>
 		)
 	}

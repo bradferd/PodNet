@@ -6,7 +6,13 @@ const PodcastList = props => {
 		return <SinglePodcast {...props} key={podcast.id} podcast={podcast} />
 	})
 
-	return <div>{podcasts}</div>
+	return (
+		<div className='ui raised segment'>
+			<div className='ui grid'>
+				<div className='ui three column row'>{podcasts}</div>
+			</div>
+		</div>
+	)
 }
 
 export default PodcastList
