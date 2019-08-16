@@ -6,14 +6,15 @@ export default class Navbar extends Component {
 		return (
 			<div className='ui inverted top fixed menu' style={{ marginBottom: '0' }}>
 				<div className='item'>
-					<i className='podcast icon' />PodNet
+					<i className='podcast icon' />
+					PodNet
 				</div>
 				<div className='right menu'>
 					<div className='link item'>
 						<Link to='/playlists'>Playlists</Link>
 					</div>
 					<div className='link item'>
-						<Link to=''>Podcasts</Link>
+						<Link to='/playlists/new'>New Playlist</Link>
 					</div>
 				</div>
 			</div>

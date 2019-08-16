@@ -4,7 +4,11 @@ import axios from 'axios'
 export default class ShowComment extends Component {
 	state = {
 		podcast: {},
-		comments: []
+		comments: [],
+		newComment: {
+			author: '',
+			comment: ''
+		}
 	}
 
 	componentDidMount() {
@@ -30,13 +34,35 @@ export default class ShowComment extends Component {
 		this.setState({ comments: res.data })
 	}
 
+	handleSubmit = e => {
+		e.preventDefault()
+		axios.post(
+			`/api/playlist/${this.props.match.params.playlistId}/podcast/${
+				this.props.match.params.podcastId
+			}/comment`,
+			this.state.newComment
+		)
+		this.getComments()
+		this.setState({ newComment: { comment: '', author: '' } })
+	}
+
+	handleInputChange = e => {
+		const copyComment = { ...this.state.newComment }
+		copyComment[e.target.name] = e.target.value
+		this.setState({ newComment: copyComment })
+	}
+
 	render() {
 		let fetchedComments = this.state.comments.map(comment => {
 			return (
 				<div className='comment'>
 					<div className='content'>
-						<div className='author'>{comment.author}</div>
-						<div className='text'>{comment.comment}</div>
+						<div className='author'>
+							<h4>{comment.author}</h4>
+						</div>
+						<div className='text'>
+							<p>{comment.comment}</p>
+						</div>
 					</div>
 				</div>
 			)
@@ -54,14 +80,36 @@ export default class ShowComment extends Component {
 					<audio controls src={this.state.podcast.audio} />
 					<div className='ui container'>
 						<div className='ui comments' style={{ margin: '0 auto' }}>
+							<h3 class='ui dividing header'>Comments</h3>
 							{fetchedComments}
-							<form class='ui reply form'>
-								<div class='field'>
-									<textarea />
+							<form onSubmit={this.handleSubmit} class='ui reply form'>
+								<div className='field'>
+									<input
+										onChange={this.handleInputChange}
+										type='text'
+										htmlFor='comment-author'
+										id='comment-author'
+										name='author'
+										placeholder='Enter author name...'
+										value={this.state.newComment.author}
+										autoComplete='off'
+									/>
 								</div>
-								<div class='ui primary submit labeled icon button'>
-									<i class='icon edit' /> Add Comment
+								<div className='field'>
+									<input
+										onChange={this.handleInputChange}
+										type='text'
+										id='comment-comment'
+										name='comment'
+										placeholder='Enter comment...'
+										value={this.state.newComment.comment}
+										autoComplete='off'
+									/>
 								</div>
+								<input
+									type='submit'
+									class='ui primary submit labeled icon button'
+								/>
 							</form>
 						</div>
 					</div>

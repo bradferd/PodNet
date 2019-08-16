@@ -12,7 +12,7 @@ export default class NewComment extends Component {
 
 	async componentDidMount() {
 		const res = await axios.get(
-			`/api/playlists/${this.props.match.params.playlistId}/podcast/${
+			`/api/playlist/${this.props.match.params.playlistId}/podcast/${
 				this.props.match.params.podcastId
 			}/comment/${this.props.match.params.commentId}`
 		)
@@ -38,7 +38,7 @@ export default class NewComment extends Component {
 	renderForm = () => {
 		return (
 			<>
-				<label htmlFor='playlist-name'>Playlist Name</label>
+				<label htmlFor='comment-comment'>Comment</label>
 				<input
 					onChange={this.handleInputChange}
 					type='text'
@@ -47,13 +47,13 @@ export default class NewComment extends Component {
 					value={this.state.newComment.comment}
 					autoComplete='off'
 				/>
-				<label htmlFor='playlist-description'>Playlist Description</label>
+				<label htmlFor='comment-author'>Author</label>
 				<input
 					onChange={this.handleInputChange}
 					type='text'
 					id='comment-author'
 					name='author'
-					value={this.state.newPlaylist.author}
+					value={this.state.newComment.author}
 					autoComplete='off'
 				/>
 			</>
