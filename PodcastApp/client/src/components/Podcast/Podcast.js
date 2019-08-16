@@ -21,8 +21,14 @@ export default class Podcast extends Component {
 				</div>
 				<div className='extra content'>
 					<span className='left floated'>
-						<i className='comment icon' />
-						comments
+						<Link
+							to={`/playlists/${this.props.playlist}/podcast/${
+								this.props.id
+							}/comments`}
+						>
+							<i className='comment icon' />
+							comments
+						</Link>
 					</span>
 					<span className='right floated'>
 						<Link
