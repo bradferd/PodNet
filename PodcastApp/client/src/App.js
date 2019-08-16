@@ -9,6 +9,7 @@ import PlaylistDash from './components/Playlist/PlaylistDash'
 import DeletePlaylist from './components/Playlist/DeletePlaylist'
 import DeletePodcast from './components/Podcast/DeletePodcast'
 import ShowComment from './components/Comments/ShowComment'
+import EditComment from './components/Form/EditComment'
 
 function App() {
 	return (
@@ -17,6 +18,10 @@ function App() {
 				<Navbar />
 				<Switch>
 					<Route exact path='/playlists' component={Playlists} />
+					<Route
+						path='/playlists/:playlistId/podcast/:podcastId/comments/:commentId/edit'
+						component={EditComment}
+					/>
 					<Route
 						path='/playlists/:playlistId/podcast/:podcastId/comments'
 						component={ShowComment}

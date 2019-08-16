@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 export default class ShowComment extends Component {
 	state = {
@@ -55,15 +56,26 @@ export default class ShowComment extends Component {
 	render() {
 		let fetchedComments = this.state.comments.map(comment => {
 			return (
-				<div className='comment'>
-					<div className='content'>
-						<div className='author'>
+				<div className='ui comment items'>
+					<div className='content item'>
+						<div className='header left floated'>
 							<h4>{comment.author}</h4>
 						</div>
-						<div className='text'>
+						<div className='description'>
 							<p>{comment.comment}</p>
 						</div>
+						<div className='actions right floated'>
+							<Link
+								to={`/playlists/${this.props.match.params.playlistId}/podcast/${
+									this.props.match.params.podcastId
+								}/comments/${comment._id}/edit`}
+							>
+								Edit
+							</Link>
+							<Link to=''>Delete</Link>
+						</div>
 					</div>
+					<hr />
 				</div>
 			)
 		})
