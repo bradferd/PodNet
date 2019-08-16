@@ -21,7 +21,12 @@ export default class Podcasts extends Component {
 		return (
 			<div>
 				<div className='ui raised segment' style={{ padding: '50px' }}>
-					<button onClick={this.props.toggleSearch}>Find a new Podcast!</button>
+					<button
+						className='ui button primary'
+						onClick={this.props.toggleSearch}
+					>
+						Find a new Podcast!
+					</button>
 					<div
 						className='ui grid'
 						style={{ marginTop: '10px', justifyContent: 'space-around' }}

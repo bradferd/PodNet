@@ -39,11 +39,15 @@ export default class PlaylistDash extends Component {
 	render() {
 		return (
 			<div className='ui segment' style={{ marginTop: '40px' }}>
-				<h1>{this.state.playlist.name}</h1>
-				<Link to={`/playlists/${this.state.playlist._id}/delete`}>
-					<i className='trash icon' />
-					Delete Playlist
-				</Link>
+				<div className='row'>
+					<h1>{this.state.playlist.name}</h1>
+					<span className='right floated'>
+						<Link to={`/playlists/${this.state.playlist._id}/delete`}>
+							<i className='trash dark icon' />
+						</Link>
+					</span>
+				</div>
+
 				{this.state.isSearching ? (
 					<PodcastSearch
 						{...this.props}
