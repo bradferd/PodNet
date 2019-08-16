@@ -14,9 +14,19 @@ export default class Podcast extends Component {
 						alt={this.props.title}
 					/>
 				</div>
-				<div className='extra content'>
+				<div className='content'>
 					<h4>{this.props.title}</h4>
 					<audio controls src={this.props.audio} style={{ width: '265px' }} />
+				</div>
+				<div className='extra content'>
+					<span className='left floated'>
+						<i className='comment icon' />
+						comments
+					</span>
+					<span className='right floated'>
+						<i className='trash icon' />
+						Delete Podcast
+					</span>
 				</div>
 			</div>
 		)
