@@ -40,7 +40,7 @@ playlistRouter.put('/:playlistId', async (req, res) => {
 
 playlistRouter.delete('/:playlistId', async (req, res) => {
 	try {
-		const deletedPlaylist = await playlistAPi.deletePlaylist(
+		const deletedPlaylist = await playlistApi.deletePlaylist(
 			req.params.playlistId
 		)
 		res.json(deletedPlaylist)

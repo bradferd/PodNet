@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Axios from 'axios'
+import { Link } from 'react-router-dom'
 import PodcastSearch from '../Search/PodcastSearch'
 import Podcasts from '../Podcast/Podcasts'
 
@@ -39,10 +40,10 @@ export default class PlaylistDash extends Component {
 		return (
 			<div className='ui segment' style={{ marginTop: '40px' }}>
 				<h1>{this.state.playlist.name}</h1>
-				<span className='right floated'>
+				<Link to={`/playlists/${this.state.playlist._id}/delete`}>
 					<i className='trash icon' />
 					Delete Playlist
-				</span>
+				</Link>
 				{this.state.isSearching ? (
 					<PodcastSearch
 						{...this.props}

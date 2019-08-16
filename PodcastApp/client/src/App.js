@@ -6,6 +6,7 @@ import Navbar from './components/Navbar'
 import NewPlaylist from './components/Form/NewPlaylist'
 import EditPlaylist from './components/Form/EditPlaylist'
 import PlaylistDash from './components/Playlist/PlaylistDash'
+import DeletePlaylist from './components/Playlist/DeletePlaylist'
 
 function App() {
 	return (
@@ -15,6 +16,10 @@ function App() {
 				<Switch>
 					<Route exact path='/playlists' component={Playlists} />
 					<Route path='/playlists/:playlistId/edit' component={EditPlaylist} />
+					<Route
+						path='/playlists/:playlistId/delete'
+						component={DeletePlaylist}
+					/>
 					<Route exact path='/playlists/new' component={NewPlaylist} />
 					<Route path='/playlists/:playlistId' component={PlaylistDash} />
 				</Switch>
