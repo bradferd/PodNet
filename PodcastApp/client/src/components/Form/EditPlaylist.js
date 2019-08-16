@@ -81,7 +81,7 @@ export default class NewPlaylist extends Component {
 				<Form
 					handleSubmit={this.handleSubmit}
 					renderForm={this.renderForm}
-					inputValue='Create Playlist'
+					inputValue='Update Playlist'
 				/>
 			</div>
 		)
