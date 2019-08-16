@@ -21,7 +21,7 @@ export default class Playlists extends Component {
 			return (
 				<div
 					className='ui container column'
-					key='playlist._id'
+					key={playlist._id}
 					style={{ padding: '30px' }}
 				>
 					<div className='ui segment'>

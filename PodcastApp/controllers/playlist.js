@@ -28,7 +28,7 @@ playlistRouter.post('/', async (req, res) => {
 
 playlistRouter.put('/:playlistId', async (req, res) => {
 	try {
-		const updatedPlaylist = await playlistApi.updatedPlaylist(
+		const updatedPlaylist = await playlistApi.updatePlaylist(
 			req.params.playlistId,
 			req.body
 		)
