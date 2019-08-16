@@ -5,14 +5,15 @@ import PodcastList from './PodcastList'
 export default class PodcastSearch extends Component {
 	state = {
 		podcasts: [],
-		term: ''
+		term: '',
+		hasSearched: false
 	}
 
 	onSearchSubmit = async term => {
 		const response = await Axios.get('/api/listenNotes', {
 			params: { query: term }
 		})
-		this.setState({ podcasts: response.data.results })
+		this.setState({ podcasts: response.data.results, hasSearched: true })
 	}
 
 	onFormSubmit = e => {
@@ -40,7 +41,9 @@ export default class PodcastSearch extends Component {
 						</button>
 					</div>
 				</form>
-				<PodcastList {...this.props} podcasts={this.state.podcasts} />
+				{this.state.hasSearched ? (
+					<PodcastList {...this.props} podcasts={this.state.podcasts} />
+				) : null}
 			</div>
 		)
 	}
