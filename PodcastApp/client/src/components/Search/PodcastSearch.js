@@ -25,7 +25,8 @@ export default class PodcastSearch extends Component {
 	render() {
 		return (
 			<div>
-				<form onSubmit={this.onFormSubmit}>
+				<button onClick={this.props.toggleSearch}>Back to Playlist</button>
+				<form onSubmit={this.onFormSubmit} style={{ marginTop: '10px' }}>
 					<div className='ui action input'>
 						<input
 							className='prompt'

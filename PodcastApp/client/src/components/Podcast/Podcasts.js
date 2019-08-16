@@ -13,12 +13,18 @@ export default class Podcasts extends Component {
 					description={podcast.description}
 					thumbnail={podcast.thumbnail}
 					audio={podcast.audio}
+					toggleSearch={this.props.toggleSearch}
 				/>
 			)
 		})
 		return (
 			<div>
-				<div className='ui raised segment'>{podcasts}</div>
+				<div className='ui raised segment' style={{ marginTop: '10px' }}>
+					<button onClick={this.props.toggleSearch}>Find a new Podcast!</button>
+					<div className='ui grid' style={{ marginTop: '10px' }}>
+						{podcasts}
+					</div>
+				</div>
 			</div>
 		)
 	}
