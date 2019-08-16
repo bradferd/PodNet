@@ -7,6 +7,7 @@ import NewPlaylist from './components/Form/NewPlaylist'
 import EditPlaylist from './components/Form/EditPlaylist'
 import PlaylistDash from './components/Playlist/PlaylistDash'
 import DeletePlaylist from './components/Playlist/DeletePlaylist'
+import DeletePodcast from './components/Podcast/DeletePodcast'
 
 function App() {
 	return (
@@ -16,6 +17,10 @@ function App() {
 				<Switch>
 					<Route exact path='/playlists' component={Playlists} />
 					<Route path='/playlists/:playlistId/edit' component={EditPlaylist} />
+					<Route
+						path='/playlists/:playlistId/podcast/:podcastId/delete'
+						component={DeletePodcast}
+					/>
 					<Route
 						path='/playlists/:playlistId/delete'
 						component={DeletePlaylist}

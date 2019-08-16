@@ -8,6 +8,7 @@ export default class Podcasts extends Component {
 				<Podcast
 					key={podcast._id}
 					id={podcast._id}
+					playlist={podcast.playlistId}
 					publisher={podcast.publisher}
 					title={podcast.title}
 					description={podcast.description}

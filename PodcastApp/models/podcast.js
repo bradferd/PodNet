@@ -14,7 +14,7 @@ const PodcastCollection = mongoose.model('Podcasts', PodcastSchema)
 const getPodcastsByPlaylist = playlistId =>
 	PodcastCollection.find({ playlistId })
 
-const getPodcast = podcastId => PodcastCollection.find(podcastId)
+const getPodcast = podcastId => PodcastCollection.findById(podcastId)
 
 const newPodcast = podcastObject => PodcastCollection.create(podcastObject)
 

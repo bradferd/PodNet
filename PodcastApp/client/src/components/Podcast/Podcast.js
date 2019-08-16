@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 export default class Podcast extends Component {
 	render() {
@@ -24,8 +25,13 @@ export default class Podcast extends Component {
 						comments
 					</span>
 					<span className='right floated'>
-						<i className='trash icon' />
-						Delete Podcast
+						<Link
+							to={`/playlists/${this.props.playlist}/podcast/${
+								this.props.id
+							}/delete`}
+						>
+							<i className='trash icon' />
+						</Link>
 					</span>
 				</div>
 			</div>
