@@ -72,7 +72,13 @@ export default class ShowComment extends Component {
 							>
 								Edit
 							</Link>
-							<Link to=''>Delete</Link>
+							<Link
+								to={`/playlists/${this.props.match.params.playlistId}/podcast/${
+									this.props.match.params.podcastId
+								}/comments/${comment._id}/delete`}
+							>
+								Delete
+							</Link>
 						</div>
 					</div>
 					<hr />
