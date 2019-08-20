@@ -19,7 +19,7 @@ const history = createHistory()
 
 function App() {
 	return (
-		<div>
+		<div className='App'>
 			<Router history={history}>
 				<Navbar history={history} />
 				<Switch>

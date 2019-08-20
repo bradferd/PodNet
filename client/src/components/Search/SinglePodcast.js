@@ -38,11 +38,16 @@ export default class SinglePodcast extends Component {
 							Listen
 						</audio>
 					</div>
-					<div className='extra content'>
-						<button className='ui button primary' onClick={this.addToPlaylist}>
-							Add to Playlist
-						</button>
-					</div>
+					{this.props.match.params.playlistId ? (
+						<div className='extra content'>
+							<button
+								className='ui button primary'
+								onClick={this.addToPlaylist}
+							>
+								Add to Playlist
+							</button>
+						</div>
+					) : null}
 				</div>
 			</div>
 		)
