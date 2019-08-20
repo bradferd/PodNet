@@ -31,11 +31,6 @@ export default class Playlists extends Component {
 								{playlist.name}
 								<i className='podcast icon' />
 							</Link>
-							<div className='right floated'>
-								<Link to={`/playlists/${playlist._id}/edit`}>
-									<i className='ui icon edit' />
-								</Link>
-							</div>
 						</div>
 						<div className='content'>
 							<h3>{playlist.genre}</h3>

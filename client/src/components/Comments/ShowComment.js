@@ -98,7 +98,7 @@ export default class ShowComment extends Component {
 					<audio controls src={this.state.podcast.audio} />
 					<div className='ui container'>
 						<div className='ui comments' style={{ margin: '0 auto' }}>
-							<h3 class='ui dividing header'>Comments</h3>
+							<h3 className='ui dividing header'>Comments</h3>
 							{fetchedComments}
 							<form onSubmit={this.handleSubmit} class='ui reply form'>
 								<div className='field'>

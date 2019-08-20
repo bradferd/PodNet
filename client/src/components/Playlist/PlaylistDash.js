@@ -52,9 +52,26 @@ export default class PlaylistDash extends Component {
 					</>
 				) : (
 					<>
-						<Link to={`/playlists/${this.state.playlist._id}/delete`}>
-							<i className='trash dark icon' />
-						</Link>
+						<div
+							className='ui icon buttons right floated'
+							style={{ marginTop: '-35px' }}
+						>
+							<Link
+								className='ui icon button warning'
+								to={`/playlists/${this.state.playlist._id}/edit`}
+							>
+								{' '}
+								<i className='ui icon edit' />
+							</Link>
+							<div className='or' />
+
+							<Link
+								className='ui icon button negative'
+								to={`/playlists/${this.state.playlist._id}/delete`}
+							>
+								<i className='trash dark icon' />{' '}
+							</Link>
+						</div>
 						<Podcasts
 							toggleSearch={this.toggleSearch}
 							podcasts={this.state.podcasts}

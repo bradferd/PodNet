@@ -25,8 +25,9 @@ export default class PodcastSearch extends Component {
 
 	render() {
 		return (
-			<div>
-				<form onSubmit={this.onFormSubmit} style={{ marginTop: '10px' }}>
+			<div className='ui container' style={{ marginTop: '40px' }}>
+				<h2>Search All Podcasts</h2>
+				<form onSubmit={this.onFormSubmit}>
 					<div className='ui action input'>
 						<input
 							className='prompt'
