@@ -11,6 +11,7 @@ import DeletePodcast from './components/Podcast/DeletePodcast'
 import ShowComment from './components/Comments/ShowComment'
 import EditComment from './components/Form/EditComment'
 import DeleteComment from './components/Comments/DeleteComment'
+import Landing from './components/Landing'
 
 function App() {
 	return (
@@ -19,6 +20,10 @@ function App() {
 				<Navbar />
 				<Switch>
 					<Route exact path='/playlists' component={Playlists} />
+					<Route path='/playlists/new' component={NewPlaylist} />
+					<Route exact path='/' component={Landing} />
+					<Route path='/playlists/:playlistId/edit' component={EditPlaylist} />
+					<Route path='/playlists/:playlistId' component={PlaylistDash} />
 					<Route
 						path='/playlists/:playlistId/podcast/:podcastId/comments/:commentId/edit'
 						component={EditComment}
@@ -31,7 +36,6 @@ function App() {
 						path='/playlists/:playlistId/podcast/:podcastId/comments'
 						component={ShowComment}
 					/>
-					<Route path='/playlists/:playlistId/edit' component={EditPlaylist} />
 					<Route
 						path='/playlists/:playlistId/podcast/:podcastId/delete'
 						component={DeletePodcast}
@@ -40,8 +44,6 @@ function App() {
 						path='/playlists/:playlistId/delete'
 						component={DeletePlaylist}
 					/>
-					<Route exact path='/playlists/new' component={NewPlaylist} />
-					<Route path='/playlists/:playlistId' component={PlaylistDash} />
 				</Switch>
 			</Router>
 		</div>
