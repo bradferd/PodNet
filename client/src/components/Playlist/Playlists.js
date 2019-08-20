@@ -46,7 +46,8 @@ export default class Playlists extends Component {
 			)
 		})
 		return (
-			<div className='ui container' style={{ marginTop: '70px' }}>
+			<div className='ui container' style={{ marginTop: '50px' }}>
+				<h2 className='header'>Find a playlist to listen to!</h2>
 				<div className='ui grid'>{playlists}</div>
 			</div>
 		)

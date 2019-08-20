@@ -18,7 +18,7 @@ export default class SinglePodcast extends Component {
 	render() {
 		return (
 			<div className='column'>
-				<div className='ui card'>
+				<div className='ui card' style={{ margin: '10px' }}>
 					<div className='content'>
 						<h3>{this.props.podcast.publisher_original}</h3>
 					</div>
