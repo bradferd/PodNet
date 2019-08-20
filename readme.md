@@ -1,31 +1,43 @@
-# mern-template-project
+# Project 4 PodNet
 
-# Setup A New Project From This Template
+I created a tool that allows the user to search through a database of podcasts and created a playlist of podcasts to listen to.
 
-If you are starting a new project do the following:
+## Technologies Used
 
-1. copy/download this directory to where you new project is located and rename
-   it to the name of your project.
-1. change your directory (`cd`) into the copied project template
-1. `npm install`
-1. `npm run dev`
-1. Open a new browser window and navigate to the URL http://localhost:3000/
-    here you should see `hello world` displayed after page load
-    updates should show up here automatically
-1. see the `client/src` `readme.md` file for more information on the react project
+Languages - HTML, CSS, Javascript
+Libraries - Express, Mongoose, React
+Design - Semantic UI, Google Fonts
+Project Planning - Trello
+Text Editor - Visual Studio Code
 
-# Setup A New Project Without This Template
+## Links
 
-If you want to start a project without using this template directory do the
-following:
+Public Trello Board - https://trello.com/b/XRLn8OlI/placeholder
 
+Hosted Heroku Link - https://podcasty.herokuapp.com/
 
-1. `mkdir <project-name>`
-1. `cd <project-name>`
-1. `echo "# <project-name>" > readme.md`
-1. `git init`
-1. `git add readme.md `
-1. `git commit -m "init repo with readme.md"`
-1. `npm init`
-1. `mkdir models views controllers`
-1. `touch ./server.js`
+## Wireframe Images
+
+### Home Page
+
+![alt text](./readMeImages/Landing.png 'Landing Page Wireframe')
+
+### Search Page
+
+![alt text](./readMeImages/PodcastSearch.png 'Search Page Wireframe')
+
+### Collection Page
+
+![alt text](./readMeImages/PlaylistDash.png 'Playlist Dashboard Page Wireframe')
+
+### Form Component
+
+![alt text](./readMeImages/PlaylistForm.png 'Form Page Wireframe')
+
+### Modal Component
+
+![alt text](./readMeImages/Modal.png 'Modal Page Wireframe')
+
+## ERD
+
+![alt text](./readMeImages/ERD.png 'ERD for project')
