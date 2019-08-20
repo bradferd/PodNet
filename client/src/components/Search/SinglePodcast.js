@@ -13,6 +13,7 @@ export default class SinglePodcast extends Component {
 				audio: this.props.podcast.audio
 			}
 		)
+		this.props.getPodcasts()
 	}
 	render() {
 		return (

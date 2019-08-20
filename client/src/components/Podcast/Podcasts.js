@@ -20,7 +20,7 @@ export default class Podcasts extends Component {
 		})
 		return (
 			<div>
-				<div className='ui raised segment' style={{ padding: '50px' }}>
+				<div className='ui container' style={{ padding: '50px' }}>
 					<button
 						className='ui button primary'
 						onClick={this.props.toggleSearch}

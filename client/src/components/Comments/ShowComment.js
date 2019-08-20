@@ -87,7 +87,7 @@ export default class ShowComment extends Component {
 		})
 		return (
 			<div className='ui container'>
-				<div className='ui segment' style={{ margin: '100px' }}>
+				<div className='ui segment' style={{ margin: '60px' }}>
 					<h1>{this.state.podcast.title}</h1>
 					<img
 						src={this.state.podcast.thumbnail}
