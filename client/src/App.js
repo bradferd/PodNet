@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Playlists from './components/Playlist/Playlists'
 import './App.css'
+import createHistory from 'history/createBrowserHistory'
 import Navbar from './components/Navbar'
 import NewPlaylist from './components/Form/NewPlaylist'
 import EditPlaylist from './components/Form/EditPlaylist'
@@ -14,11 +15,13 @@ import DeleteComment from './components/Comments/DeleteComment'
 import Landing from './components/Landing'
 import PodcastSearch from './components/Search/PodcastSearch'
 
+const history = createHistory()
+
 function App() {
 	return (
-		<div className='App'>
-			<Router>
-				<Navbar />
+		<div>
+			<Router history={history}>
+				<Navbar history={history} />
 				<Switch>
 					<Route path='/search' component={PodcastSearch} />
 					<Route

@@ -18,6 +18,12 @@ export default class Navbar extends Component {
 						<i className='podcast icon' />
 						PodNet
 					</NavLink>
+					<NavLink
+						className='link item'
+						onClick={() => this.props.history.goBack()}
+					>
+						Back
+					</NavLink>
 					<div className='right menu'>
 						<NavLink
 							exact

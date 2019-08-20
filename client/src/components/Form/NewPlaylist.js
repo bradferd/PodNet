@@ -28,32 +28,36 @@ export default class NewPlaylist extends Component {
 	renderForm = () => {
 		return (
 			<>
-				<label htmlFor='playlist-name'>Playlist Name</label>
+				<div className='two fields'>
+					<input
+						className='eight wide field'
+						onChange={this.handleInputChange}
+						type='text'
+						id='playlist-name'
+						placeholder='Playlist Name'
+						name='name'
+						value={this.state.newPlaylist.name}
+						autoComplete='off'
+					/>
+					<input
+						placeholder='playlist genre'
+						className='eight wide field'
+						onChange={this.handleInputChange}
+						type='text'
+						id='playlist-genre'
+						name='genre'
+						value={this.state.newPlaylist.genre}
+						autoComplete='off'
+					/>
+				</div>
 				<input
-					onChange={this.handleInputChange}
-					type='text'
-					id='playlist-name'
-					placeholder='Enter a name for this playlist...'
-					name='name'
-					value={this.state.newPlaylist.name}
-					autoComplete='off'
-				/>
-				<label htmlFor='playlist-description'>Playlist Description</label>
-				<input
+					placeholder='Playlist Description'
+					rows='2'
 					onChange={this.handleInputChange}
 					type='text'
 					id='playlist-description'
 					name='description'
 					value={this.state.newPlaylist.description}
-					autoComplete='off'
-				/>
-				<label htmlFor='playlist-genre'>Playlist Genre</label>
-				<input
-					onChange={this.handleInputChange}
-					type='text'
-					id='playlist-genre'
-					name='genre'
-					value={this.state.newPlaylist.genre}
 					autoComplete='off'
 				/>
 			</>
