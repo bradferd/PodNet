@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export default class Landing extends Component {
 	render() {
 		return (
-			<div style={{ marginTop: '100px' }}>
+			<div style={{ marginTop: '30px' }}>
 				<div className='ui middle aligned stackable grid container'>
 					<div className='row'>
 						<div className='eight wide column'>

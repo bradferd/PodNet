@@ -9,12 +9,15 @@ export default class Navbar extends Component {
 					className='ui inverted secondary pointing menu'
 					style={{ marginBottom: '0' }}
 				>
-					<div className='link item'>
-						<NavLink to='/'>
-							<i className='podcast icon' />
-							PodNet
-						</NavLink>
-					</div>
+					<NavLink
+						exact
+						activeClassName='active link item'
+						className='link item'
+						to='/'
+					>
+						<i className='podcast icon' />
+						PodNet
+					</NavLink>
 					<div className='right menu'>
 						<NavLink
 							exact

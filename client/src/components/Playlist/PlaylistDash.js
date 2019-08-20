@@ -41,11 +41,6 @@ export default class PlaylistDash extends Component {
 			<div className='ui segment' style={{ marginTop: '40px' }}>
 				<div className='row'>
 					<h1>{this.state.playlist.name}</h1>
-					<span className='right floated'>
-						<Link to={`/playlists/${this.state.playlist._id}/delete`}>
-							<i className='trash dark icon' />
-						</Link>
-					</span>
 				</div>
 
 				{this.state.isSearching ? (
@@ -55,10 +50,15 @@ export default class PlaylistDash extends Component {
 						getPodcasts={this.getPodcasts}
 					/>
 				) : (
-					<Podcasts
-						toggleSearch={this.toggleSearch}
-						podcasts={this.state.podcasts}
-					/>
+					<>
+						<Link to={`/playlists/${this.state.playlist._id}/delete`}>
+							<i className='trash dark icon' />
+						</Link>
+						<Podcasts
+							toggleSearch={this.toggleSearch}
+							podcasts={this.state.podcasts}
+						/>
+					</>
 				)}
 			</div>
 		)
