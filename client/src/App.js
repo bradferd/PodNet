@@ -20,15 +20,16 @@ function App() {
 				<Navbar />
 				<Switch>
 					<Route
-						path='/playlists/:playlistId/podcast/:podcastId/comments'
-						component={ShowComment}
-					/>
-					<Route exact path='/playlists' component={Playlists} />
-					<Route path='/playlists/new' component={NewPlaylist} />
-					<Route exact path='/' component={Landing} />
-					<Route
 						path='/playlists/:playlistId/podcast/:podcastId/comments/:commentId/edit'
 						component={EditComment}
+					/>
+					<Route
+						path='/playlists/:playlistId/podcast/:podcastId/comments/:commentId/delete'
+						component={DeleteComment}
+					/>
+					<Route
+						path='/playlists/:playlistId/podcast/:podcastId/comments'
+						component={ShowComment}
 					/>
 					<Route
 						path='/playlists/:playlistId/delete'
@@ -39,11 +40,10 @@ function App() {
 						path='/playlists/:playlistId/podcast/:podcastId/delete'
 						component={DeletePodcast}
 					/>
+					<Route path='/playlists/new' component={NewPlaylist} />
 					<Route path='/playlists/:playlistId' component={PlaylistDash} />
-					<Route
-						path='/playlists/:playlistId/podcast/:podcastId/comments/:commentId/delete'
-						component={DeleteComment}
-					/>
+					<Route exact path='/playlists' component={Playlists} />
+					<Route exact path='/' component={Landing} />
 				</Switch>
 			</Router>
 		</div>

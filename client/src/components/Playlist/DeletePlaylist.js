@@ -29,7 +29,7 @@ export default class DeletePlaylist extends Component {
 		return (
 			<>
 				<button
-					onClick={() => this.handleDelete(this.state.playlist._id)}
+					onClick={() => this.handleDelete()}
 					className='ui button negative'
 				>
 					Delete
@@ -53,7 +53,7 @@ export default class DeletePlaylist extends Component {
 				<Modal
 					title='Delete Playlist'
 					content={`Are you sure you want to delete ${
-						this.state.playlist.title
+						this.state.playlist.name
 					}?`}
 					actions={this.renderActions()}
 					onDismiss={() => this.props.history.goBack()}
