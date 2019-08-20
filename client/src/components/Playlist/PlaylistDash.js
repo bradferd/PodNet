@@ -44,11 +44,12 @@ export default class PlaylistDash extends Component {
 				</div>
 
 				{this.state.isSearching ? (
-					<PodcastSearch
-						{...this.props}
-						toggleSearch={this.toggleSearch}
-						getPodcasts={this.getPodcasts}
-					/>
+					<>
+						<button className='ui button primary' onClick={this.toggleSearch}>
+							Back to Playlist
+						</button>
+						<PodcastSearch {...this.props} getPodcasts={this.getPodcasts} />
+					</>
 				) : (
 					<>
 						<Link to={`/playlists/${this.state.playlist._id}/delete`}>

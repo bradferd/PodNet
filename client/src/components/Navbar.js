@@ -23,6 +23,14 @@ export default class Navbar extends Component {
 							exact
 							className='link item'
 							activeClassName='active link item'
+							to='/search'
+						>
+							Search Podcasts
+						</NavLink>
+						<NavLink
+							exact
+							className='link item'
+							activeClassName='active link item'
 							to='/playlists'
 						>
 							Playlists

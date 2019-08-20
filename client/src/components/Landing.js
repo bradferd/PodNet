@@ -5,6 +5,12 @@ export default class Landing extends Component {
 		return (
 			<div style={{ marginTop: '30px' }}>
 				<div className='ui middle aligned stackable grid container'>
+					<div className='ui container center aligned'>
+						<h1 className='icon header'>
+							<i className='podcast icon' />
+							<div className='content'>PodNet</div>
+						</h1>
+					</div>
 					<div className='row'>
 						<div className='eight wide column'>
 							<h3 className='ui huge header'>Do you like podcasts?</h3>
@@ -30,7 +36,7 @@ export default class Landing extends Component {
 							<img
 								src='https://images.unsplash.com/photo-1559526324-c1f275fbfa32?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&'
 								alt='podcasting'
-								className='ui large centered fluid image'
+								className='ui large centered rounded fluid image'
 							/>
 						</div>
 					</div>
@@ -39,7 +45,7 @@ export default class Landing extends Component {
 							<img
 								src='https://images.unsplash.com/photo-1559523161-0fc0d8b38a7a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2558&q=80'
 								alt='podcasters'
-								className='ui large centered fluid image'
+								className='ui large centered rounded fluid image'
 							/>
 						</div>
 						<div className='eight wide right floated column'>

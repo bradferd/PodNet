@@ -12,6 +12,7 @@ import ShowComment from './components/Comments/ShowComment'
 import EditComment from './components/Form/EditComment'
 import DeleteComment from './components/Comments/DeleteComment'
 import Landing from './components/Landing'
+import PodcastSearch from './components/Search/PodcastSearch'
 
 function App() {
 	return (
@@ -19,6 +20,7 @@ function App() {
 			<Router>
 				<Navbar />
 				<Switch>
+					<Route path='/search' component={PodcastSearch} />
 					<Route
 						path='/playlists/:playlistId/podcast/:podcastId/comments/:commentId/edit'
 						component={EditComment}

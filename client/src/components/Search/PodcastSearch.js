@@ -26,9 +26,6 @@ export default class PodcastSearch extends Component {
 	render() {
 		return (
 			<div>
-				<button className='ui button primary' onClick={this.props.toggleSearch}>
-					Back to Playlist
-				</button>
 				<form onSubmit={this.onFormSubmit} style={{ marginTop: '10px' }}>
 					<div className='ui action input'>
 						<input

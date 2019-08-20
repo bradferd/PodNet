@@ -43,8 +43,8 @@ export default class ShowComment extends Component {
 			}/comment`,
 			this.state.newComment
 		)
-		this.getComments()
 		this.setState({ newComment: { comment: '', author: '' } })
+		this.getComments()
 	}
 
 	handleInputChange = e => {
@@ -124,10 +124,7 @@ export default class ShowComment extends Component {
 										autoComplete='off'
 									/>
 								</div>
-								<input
-									type='submit'
-									class='ui primary submit labeled icon button'
-								/>
+								<input type='submit' class='ui primary submit button' />
 							</form>
 						</div>
 					</div>
