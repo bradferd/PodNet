@@ -47,7 +47,7 @@ podcastRouter.put('/:podcastId', async (req, res) => {
 podcastRouter.delete('/:podcastId', async (req, res) => {
 	try {
 		const deletedPodcast = await podcastApi.deletePodcast(req.params.podcastId)
-		res.JSON(deletedPodcast)
+		res.json(deletedPodcast)
 	} catch (err) {
 		console.log(err)
 	}

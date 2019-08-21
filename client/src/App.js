@@ -21,7 +21,7 @@ function App() {
 	return (
 		<div className='App'>
 			<Router history={history}>
-				<Navbar history={history} />
+				<Navbar />
 				<Switch>
 					<Route path='/search' component={PodcastSearch} />
 					<Route

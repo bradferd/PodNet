@@ -53,6 +53,15 @@ export default class PlaylistDash extends Component {
 				) : (
 					<>
 						<div
+							className='ui icon button left floated'
+							style={{ marginTop: '-35px' }}
+						>
+							<i
+								onClick={() => this.props.history.goBack()}
+								className='left arrow icon'
+							/>
+						</div>
+						<div
 							className='ui icon buttons right floated'
 							style={{ marginTop: '-35px' }}
 						>
@@ -63,7 +72,6 @@ export default class PlaylistDash extends Component {
 								{' '}
 								<i className='ui icon edit' />
 							</Link>
-							<div className='or' />
 
 							<Link
 								className='ui icon button negative'

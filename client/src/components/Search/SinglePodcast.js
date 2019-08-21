@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 import Axios from 'axios'
 
 export default class SinglePodcast extends Component {
+	state = {
+		clicked: false
+	}
+
 	addToPlaylist = async () => {
 		await Axios.post(
 			`/api/playlist/${this.props.match.params.playlistId}/podcast`,
@@ -14,6 +18,7 @@ export default class SinglePodcast extends Component {
 			}
 		)
 		this.props.getPodcasts()
+		this.setState({ clicked: true })
 	}
 	render() {
 		return (
@@ -39,14 +44,19 @@ export default class SinglePodcast extends Component {
 						</audio>
 					</div>
 					{this.props.match.params.playlistId ? (
-						<div className='extra content'>
-							<button
-								className='ui button primary'
-								onClick={this.addToPlaylist}
-							>
-								Add to Playlist
-							</button>
-						</div>
+						<>
+							<div className='extra content'>
+								<button
+									className='ui button primary'
+									onClick={this.addToPlaylist}
+								>
+									Add to Playlist
+								</button>
+							</div>
+							{this.state.clicked ? (
+								<div className='ui green message'>Added to Playlist!</div>
+							) : null}
+						</>
 					) : null}
 				</div>
 			</div>
