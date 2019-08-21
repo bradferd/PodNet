@@ -52,15 +52,13 @@ export default class PlaylistDash extends Component {
 					</>
 				) : (
 					<>
-						<div
+						<Link
+							to='/playlists'
 							className='ui icon button left floated'
 							style={{ marginTop: '-35px' }}
 						>
-							<i
-								onClick={() => this.props.history.goBack()}
-								className='left arrow icon'
-							/>
-						</div>
+							<i className='left arrow icon' />
+						</Link>
 						<div
 							className='ui icon buttons right floated'
 							style={{ marginTop: '-35px' }}

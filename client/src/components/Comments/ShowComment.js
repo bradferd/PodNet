@@ -87,15 +87,13 @@ export default class ShowComment extends Component {
 		})
 		return (
 			<div className='ui container'>
-				<div
+				<Link
+					to={`/playlists/${this.props.match.params.playlistId}/podcast`}
 					className='ui icon button left floated'
 					style={{ marginTop: '-35px' }}
 				>
-					<i
-						onClick={() => this.props.history.goBack()}
-						className='left arrow icon'
-					/>
-				</div>
+					<i className='left arrow icon' />
+				</Link>
 				<div className='ui segment' style={{ margin: '60px' }}>
 					<h1>{this.state.podcast.title}</h1>
 					<img
